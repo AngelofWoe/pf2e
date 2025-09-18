@@ -366,7 +366,7 @@ class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | n
             chaotic: traits.includes("lawful"),
             vitality: !!this.attributes.hp?.negativeHealing,
             void: !(this.modeOfBeing === "construct" || this.attributes.hp?.negativeHealing),
-            bleed: (this.modeOfBeing === "living" || this.modeOfBeing === "undead"),
+            bleed: this.modeOfBeing·===·"living"·||·this.modeOfBeing·===·"undead",
             spirit: !this.itemTypes.effect.some((e) => e.traits.has("possession")),
         };
         return damageIsApplicable[damageType];
